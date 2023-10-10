@@ -13,6 +13,7 @@ class ResultModel with _$ResultModel {
     required String topic,
     required List<ResultAnswerModel> answers,
     @TimestampConverter()
+    // ignore: invalid_annotation_target
     @JsonKey(name: 'created_at') required DateTime createdAt,
   }) = _ResultModel;
 
@@ -25,6 +26,7 @@ class ResultAnswerModel with _$ResultAnswerModel {
   const factory ResultAnswerModel({
     required QuestionModel question,
     required String answer,
+    // ignore: invalid_annotation_target
     @JsonKey(name: 'is_correct') required bool isCorrect,
   }) = _ResultAnswerModel;
 

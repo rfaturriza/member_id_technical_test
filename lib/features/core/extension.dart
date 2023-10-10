@@ -15,11 +15,11 @@ extension StringExtension on String {
     return isNotEmpty;
   }
 
-  String get orEmpty => this ?? '';
+  String get orEmpty => this;
 
   String removeZeroAtFirst() {
     if (startsWith('0') == true) {
-      return replaceFirst('0', '') ?? '';
+      return replaceFirst('0', '');
     }
     return orEmpty;
   }

@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:test_memberid/features/core/extension.dart';
 import 'package:test_memberid/features/core/pair.dart';
@@ -11,11 +10,9 @@ import 'package:test_memberid/features/quiz/data/models/topic_model.dart';
 @injectable
 class QuizRepository {
   final FirebaseFirestore firestore;
-  final FirebaseStorage firebaseStorage;
 
   QuizRepository(
     this.firestore,
-    this.firebaseStorage,
   );
 
   final String _collectionTopic = 'topics';

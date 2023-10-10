@@ -22,12 +22,12 @@ class ErrorContainer extends StatelessWidget {
           ),
           const VerticalSpacer(),
           const TitleText(
-            AppConstant.ERROR_OCCURRED,
+            AppConstant.errorOccurred,
           ),
           const VerticalSpacer(),
           InkWell(
             onTap: onRetry,
-            child: const LabelText(AppConstant.TRY_AGAIN),
+            child: const LabelText(AppConstant.tryAgain),
           ),
         ],
       ),

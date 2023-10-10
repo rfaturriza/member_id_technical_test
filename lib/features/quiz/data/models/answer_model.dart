@@ -8,6 +8,7 @@ part 'answer_model.g.dart';
 class AnswerModel with _$AnswerModel {
   const factory AnswerModel({
     required String text,
+    // ignore: invalid_annotation_target
     @JsonKey(name: 'is_correct')
     required bool isCorrect,
   }) = _AnswerModel;
