@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+import 'package:test_memberid/features/core/widgets/spacer.dart';
+import 'package:test_memberid/features/core/widgets/text.dart';
+
+import '../utils/constant.dart';
+
+class ErrorContainer extends StatelessWidget {
+  final Function()? onRetry;
+
+  const ErrorContainer({Key? key, this.onRetry}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+           Icon(
+            Icons.error_outline,
+            color: Colors.red[300],
+            size: 60,
+          ),
+          const VerticalSpacer(),
+          const TitleText(
+            AppConstant.ERROR_OCCURRED,
+          ),
+          const VerticalSpacer(),
+          InkWell(
+            onTap: onRetry,
+            child: const LabelText(AppConstant.TRY_AGAIN),
+          ),
+        ],
+      ),
+    );
+  }
+}
