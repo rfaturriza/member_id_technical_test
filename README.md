@@ -26,7 +26,7 @@ To run this Flutter project on your local machine, follow these steps:
 2. **Navigate to the project directory:**
 
    ```bash
-   cd quran_flutter
+   cd member_id_technical_test
 
 3. **Install dependencies:**
 
