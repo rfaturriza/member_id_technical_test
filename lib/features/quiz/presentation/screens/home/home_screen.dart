@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:test_memberid/features/core/extension.dart';
@@ -5,6 +7,7 @@ import 'package:test_memberid/features/core/widgets/spacer.dart';
 import 'package:test_memberid/features/core/widgets/text.dart';
 import 'package:test_memberid/features/quiz/presentation/screens/quiz/quiz_screen.dart';
 import 'package:test_memberid/features/quiz/presentation/screens/topic/topic_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -114,7 +117,20 @@ class _FooterSection extends StatelessWidget {
           label: const ButtonText('Share'),
         ),
         TextButton.icon(
-          onPressed: () {},
+          onPressed: () {
+            if (Platform.isAndroid || Platform.isIOS) {
+              final appId = Platform.isAndroid ? 'com.whatsapp' : '310633997';
+              final url = Uri.parse(
+                Platform.isAndroid
+                    ? "market://details?id=$appId"
+                    : "https://apps.apple.com/app/id$appId",
+              );
+              launchUrl(
+                url,
+                mode: LaunchMode.externalApplication,
+              );
+            }
+          },
           icon: const Icon(Icons.star, color: Colors.yellow),
           label: const ButtonText('Rate Us'),
         ),
